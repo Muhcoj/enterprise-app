@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :companies do 
     collection { post :import }
   end
+
+  resources :companies, only: :index
   
   devise_for :users
   get 'welcome/index'
